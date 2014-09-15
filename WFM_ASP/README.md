@@ -2,7 +2,7 @@ Breeze-angular-sample
 =====================
 
 A sample enterprise web application using ASP.net, EF, BreezeJS, AngularJS.
-It's my first experience with this frameworks but it works.
+It's my first experience with this frameworks but it works. 
 
 Backend:
 
