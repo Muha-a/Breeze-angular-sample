@@ -17,7 +17,7 @@ using WFMModel;
 namespace MvcApplication5.Controllers
 {
     /// <summary>
-    /// Контроллер обслуживает нестандартные запросы клиента, не связанные с передачей html страниц или объектов модели
+    /// The controler serves the non-standard requests of the client (not view html or model objects)
     /// </summary>
     public class DataController : ApiController
     {
@@ -49,7 +49,7 @@ namespace MvcApplication5.Controllers
                 par.Add(new JsReportParameter() { name = "timeEnd", value = parameters.EndTime });
             }
             Stream rep = JasperHttpHelper.GetReportAsPdf("santaReport", par.ToArray(), BASampleConfig.GetJasperPort());
-            // вернуть отчет
+            // to return the report
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StreamContent(rep);
             response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
@@ -57,7 +57,7 @@ namespace MvcApplication5.Controllers
         }
         
         /// <summary>
-        /// Возвращает количество новых документов на сервере
+        /// Returns count of new GPUStop documents
         /// </summary>
         [HttpGet]
         public HttpResponseMessage NewDocCount(string parameters)
@@ -84,20 +84,20 @@ namespace MvcApplication5.Controllers
     public class GPUStopRepParams
     {
         /// <summary>
-        /// Интервал времени
+        /// Time interval
         /// </summary>
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         /// <summary>
-        ///  по какой ГПУ
+        ///  wich GPU
         /// </summary>
         public string GPUName { get; set; }
         /// <summary>
-        /// Типовая причина
+        /// Typical cause
         /// </summary>
         public int? CauseType { get; set; }
         /// <summary>
-        /// Тип остановки
+        /// GPU stop time
         /// </summary>
         public int? FailType { get; set; }
     }

@@ -9,7 +9,7 @@ namespace WFM
     public static class UserRoles
     {
         /// <summary>
-        /// Прочитать роль пользователя из базы
+        /// reads user role from database
         /// </summary>
         public static string GetUserRole(string userName)
         {

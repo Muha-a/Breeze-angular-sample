@@ -5,8 +5,8 @@
 -- -----------------------------------------------------------
 -- Entity Designer DDL Script for MySQL Server 4.1 and higher
 -- -----------------------------------------------------------
--- Date Created: 09/15/2014 11:52:20
--- Generated from EDMX file: D:\Programs\santawfm\WFMModel\WFMModel.edmx
+-- Date Created: 09/15/2014 22:44:07
+-- Generated from EDMX file: D:\Programs\ba_sample\WFMModel\WFMModel.edmx
 -- Target version: 2.0.0.0
 -- --------------------------------------------------
 
@@ -27,8 +27,6 @@
 SET foreign_key_checks = 0;
     DROP TABLE IF EXISTS `TagTriggerSet`;
     DROP TABLE IF EXISTS `GPUTypicalCauseSet`;
-    DROP TABLE IF EXISTS `WFMDocumentSet`;
-    DROP TABLE IF EXISTS `EventDocumentSet`;
     DROP TABLE IF EXISTS `EmployeeSet`;
     DROP TABLE IF EXISTS `GPUCauseSet`;
     DROP TABLE IF EXISTS `GPUStopSet`;
@@ -58,24 +56,6 @@ CREATE TABLE `GPUTypicalCauseSet`(
 	`IsFailure` bool NOT NULL);
 
 ALTER TABLE `GPUTypicalCauseSet` ADD PRIMARY KEY (Id);
-
-
-
-
-CREATE TABLE `WFMDocumentSet`(
-	`Id` int NOT NULL AUTO_INCREMENT UNIQUE);
-
-ALTER TABLE `WFMDocumentSet` ADD PRIMARY KEY (Id);
-
-
-
-
-CREATE TABLE `EventDocumentSet`(
-	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
-	`EventTime` datetime, 
-	`RevocationTime` datetime);
-
-ALTER TABLE `EventDocumentSet` ADD PRIMARY KEY (Id);
 
 
 

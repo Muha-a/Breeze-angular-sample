@@ -15,7 +15,7 @@ using WFMModel;
 namespace MvcApplication5.Controllers
 {
     /// <summary>
-    /// В этот контроллер нужно добавлять однотипные функции для каждого класса объектов модели
+    /// Entity frameworm model controller; it is necessary to add function for each class
     /// </summary>
     [Authorize]
     [BreezeController]    
@@ -43,11 +43,6 @@ namespace MvcApplication5.Controllers
             return _contextProvider.Context.GPUTypicalCauseSet;
         }
 
-        [HttpGet]
-        public IQueryable<WFMDocument> WFMDocumentSet()
-        {
-            return _contextProvider.Context.WFMDocumentSet;
-        }
         [HttpGet]
         public IQueryable<GPUCause> GPUCauseSet()
         {

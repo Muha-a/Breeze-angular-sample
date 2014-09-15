@@ -1,15 +1,15 @@
 ﻿<div style="position:absolute; left:0px;right:0px;top:0px;bottom:0px; overflow:hidden; padding-left:10px;" ng-controller="GPUReportC">
-    <button class="btn btn-default" ng-click="activeTab=0" style="margin-left:20px; margin-top:2px; line-height:12px;">Параметры</button>
-    <button class="btn btn-default" ng-click="activeTab=1;openReport()" style="margin-left:10px; margin-top:2px; line-height:12px;">Просмотр</button>    
+    <button class="btn btn-default" ng-click="activeTab=0" style="margin-left:20px; margin-top:2px; line-height:12px;">Parameters</button>
+    <button class="btn btn-default" ng-click="activeTab=1;openReport()" style="margin-left:10px; margin-top:2px; line-height:12px;">View</button>    
     <br>
     <div class="boxSizing" ng-show="activeTab==0" style="position: absolute; left:10px; right:10px; top:35px; padding-left:20px; bottom: 10px; border: 1px solid #cbcbcb;">
         <br>
-        Отчет за период:<br>
+        Report period:<br>
         <br>
-        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="week" name="period"><span style="vertical-align: middle">Неделя</span><br>
-        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="month" name="period">Месяц<br>
-        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="year" name="period">Год<br>
-        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="period" name="period">Указанный период<br><br>
+        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="week" name="period"><span style="vertical-align: middle">Week</span><br>
+        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="month" name="period">Month<br>
+        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="year" name="period">Year<br>
+        <input type="radio" ng-model="selectedMode" style="vertical-align: middle; margin: 0px; margin-right:5px" value="period" name="period">Specified period<br><br>
         
         <span style="margin-left:20px"> с </span>
         <div class="col-md-6">
@@ -31,7 +31,7 @@
         </div>        
 
         <br><br>
-        Фильтр:
+        Filter:
         <br><br>
         <span>Включить в отчет только аварийные остановки или только остановки оператором:</span><br>
         <select style="width: 200px" ng-model="typeFilter" ng-options="tp for tp in types">

@@ -23,8 +23,8 @@
                 enableColumnResize: true,
                 rowHeight: 25,
                 selectedItems: [],
-                columnDefs: [{ field: 'ObjName', displayName: 'Объект', width: "120px" }, 
-                             { field: 'Pause', displayName: 'Пауза', width: "100px" }]
+                columnDefs: [{ field: 'ObjName', displayName: 'Object', width: "120px" }, 
+                             { field: 'Pause', displayName: 'Pause', width: "100px" }]
             };
         }
     }

@@ -2,7 +2,7 @@
     function($scope, $filter) {        
         // поддержка функций для представления
         $scope.getOptions = function () {
-            return { title: "Отчеты по остановкам ГПУ", saveButtons: false };
+            return { title: "Report on GPU stops", saveButtons: false };
         };
         // начальное состояние модели
         $scope.activeTab = '0';
@@ -15,14 +15,14 @@
         $scope.causeFilter = null;
         $scope.typeFilter = null;
         var dc = newDataContext();
-        // заполнить список объектов
+        // fill obhect list
         DataQuery.from('TagTriggerSet').using(dc).execute().then(success1);
         function success1(data) {
             var objects = [];
             for (id in data.results)
                 objects.push({ Name: data.results[id].ObjName });
             $scope.objects = objects;
-            // заполнить список причин
+            // fill cause list
             DataQuery.from('GPUTypicalCauseSet').using(dc).execute().then(success2);
         }
         function success2(data) {
@@ -30,11 +30,11 @@
         }
         $scope.loadReport = function () {
                 var link = document.createElement("tempDownload");
-                link.download = 'Отчет';
+                link.download = 'Report';
                 link.href = "/WFM/api/Data/Report?objName=GPUStopReport";
                 link.click();            
         }
-        $scope.types = ['аварийные','оператором'];
+        $scope.types = ['emergency','by operator'];
 
         $scope.openReport = function () {
             var repUrl = "/WFM/api/Data/GPUStopReport/?";
@@ -45,7 +45,7 @@
             if ($scope.causeFilter)
                 repPar += delimiter() + "CauseType=" + $scope.causeFilter.Id;
             if ($scope.typeFilter)
-                repPar += delimiter() + "FailType=" + ($scope.typeFilter == 'аварийные' ? 1 : 0);
+                repPar += delimiter() + "FailType=" + ($scope.typeFilter == 'emergency' ? 1 : 0);
             var cDate = new Date();
             var begin;
             var end;

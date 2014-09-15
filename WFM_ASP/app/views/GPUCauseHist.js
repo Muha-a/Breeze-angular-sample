@@ -1,14 +1,11 @@
-﻿// регистрируется контроллер
-var GPUCauseHistC = angular.module("app").controller('GPUCauseHistC', 
-    function($scope) {        
-        // поддержка функций для представления
+﻿var GPUCauseHistC = angular.module("app").controller('GPUCauseHistC', 
+    function($scope) {                
         $scope.getOptions = function () {
             return { title: "История корректировок документа", saveButtons: false };
-        };
-        // загрузка данных
+        };        
         var dc = newDataContext();
         objId = parseObjId();
-        // рекурсивно читаем историю корректировок
+        // reading history ot the document (recursively)
         $scope.corrDocs = [];
         var corrDocs = [];
         readNextDoc(objId);
@@ -20,8 +17,7 @@ var GPUCauseHistC = angular.module("app").controller('GPUCauseHistC',
             corrDocs.push(doc);
             if (doc.Replaces)
                 readNextDoc(doc.Replaces.Id);
-            else {
-                // последний прочитан
+            else {                
                 $scope.corrDocs = corrDocs.reverse();
             }
         }

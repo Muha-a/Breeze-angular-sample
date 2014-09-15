@@ -10,7 +10,7 @@ namespace WFMAsp
     public class JasperHttpHelper
     {
         /// <summary>
-        /// Запрашивает и возвращает отчет с jasper-сервера
+        /// Requests a report from the jasper-server
         /// </summary>
         public static Stream GetReportAsPdf(string repName, JsReportParameter[] repPar, int port)
         {
@@ -20,8 +20,6 @@ namespace WFMAsp
                 HttpWebRequest getR = (HttpWebRequest)WebRequest.Create("http://localhost:" + port.ToString() + "/jasperserver/rest_v2/reports/reports/" + repName + ".pdf" + parameters);
                 getR.Credentials = new NetworkCredential("jasperadmin", "jasperadmin");
                 getR.Method = "GET";
-                //getR.CookieContainer = new CookieContainer();
-                //getR.ContentType = "application/x-www-form-urlencoded";
                 WebResponse response = getR.GetResponse();
                 string st = ((HttpWebResponse)response).StatusDescription;
                 Stream dataStream = response.GetResponseStream();

@@ -8,14 +8,14 @@ using WFM;
 namespace MvcApplication5.Controllers
 {
     /// <summary>
-    /// Контроллер возвращает главную страницу приложения
+    /// this controller returns application main page
     /// </summary>
     public class MainViewController : Controller
     {        
         public ActionResult Index()
         {
-            // к странице присоединяется информация об автотизации текущего пользователя (используется при настройке стрницы на клиенте)
-            var user = System.Web.HttpContext.Current.User;
+            // to the page authorization information is attached
+            var user = System.Web.HttpContext.Current.User;     
 
             HttpCookie cookie1 = new HttpCookie("userName");
             cookie1.Value = user.Identity.Name;

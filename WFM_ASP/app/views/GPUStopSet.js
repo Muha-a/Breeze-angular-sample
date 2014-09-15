@@ -89,16 +89,16 @@
                 rowHeight: 25,
                 selectedItems: [],
                 i18n: 'ru',
-                columnDefs: [{ field: 'ObjName', displayName: 'ГПУ', cellTemplate: cellTemplate('row.entity.ObjName'), width: "100px" }, //, cellTemplate: "<span>{{row.getProperty('Name')}}</span>" 
-                             { field: 'EventTime', displayName: 'Время остановки', cellTemplate: cellTemplate('getEventTime(row.entity)'), width: "155px" },
+                columnDefs: [{ field: 'ObjName', displayName: 'GPU', cellTemplate: cellTemplate('row.entity.ObjName'), width: "100px" }, //, cellTemplate: "<span>{{row.getProperty('Name')}}</span>" 
+                             { field: 'EventTime', displayName: 'Stop time', cellTemplate: cellTemplate('getEventTime(row.entity)'), width: "155px" },
                              //{ field: 'RevocationTime', displayName: 'Пуск (по ТС)', cellTemplate: cellTemplate('getRevocationTime(row.entity)'), width: "155px" },
-                             { field: 'RestartTime', displayName: 'Время пуска', cellTemplate: cellTemplate('getRestartTime(row.entity)'), width: "155px" },
-                             { field: 'cause', displayName: 'Причина', cellTemplate: cellTemplate('getCause(row.entity)'), width: "140px" },
-                             { field: 'comment', displayName: 'Комментарий', cellTemplate: cellTemplate('getComment(row.entity)'), width: "115px" },
-                             { field: 'work', displayName: 'Вып. работы', cellTemplate: cellTemplate('getWork(row.entity)'), width: "120px" },
-                             { field: 'time', displayName: 'Время простоя', cellTemplate: cellTemplate('getDownTime(row.entity)'), width: "125px" },
-                             { field: 'operator', displayName: 'Оператор', cellTemplate: cellTemplate('getOperator(row.entity)'), width: "130px" },
-                             { field: 'corr', displayName: 'Корр.', cellTemplate: checkCellTemplate('getCorr(row.entity)'), width: "60px" }
+                             { field: 'RestartTime', displayName: 'Restart time', cellTemplate: cellTemplate('getRestartTime(row.entity)'), width: "155px" },
+                             { field: 'cause', displayName: 'Cause', cellTemplate: cellTemplate('getCause(row.entity)'), width: "140px" },
+                             { field: 'comment', displayName: 'Comment', cellTemplate: cellTemplate('getComment(row.entity)'), width: "115px" },
+                             { field: 'work', displayName: 'Works', cellTemplate: cellTemplate('getWork(row.entity)'), width: "120px" },
+                             { field: 'time', displayName: 'Down time', cellTemplate: cellTemplate('getDownTime(row.entity)'), width: "125px" },
+                             { field: 'operator', displayName: 'Operator', cellTemplate: cellTemplate('getOperator(row.entity)'), width: "130px" },
+                             { field: 'corr', displayName: 'Corr.', cellTemplate: checkCellTemplate('getCorr(row.entity)'), width: "60px" }
                              //,{ field: 'Id', displayName: 'Id', width: "100px" }
                 ]
             };

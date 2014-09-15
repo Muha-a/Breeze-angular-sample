@@ -1,4 +1,6 @@
-﻿// Замечание: если ошибиться в описании контруктора, бриз может падать с неизвестной ошибкой!!!
+﻿// warning: test constructor cbreeze can fail with unknown error if there is some error in constructor !!!
+
+// Constructors for model objects
 
 // В этом файле описываются контрукторы для объектов модели для того, чтобы добавить методы к объектам.
 // В JS конструктор - это функция к которой добавляются методы в поле "prototype".

@@ -31,9 +31,9 @@
          Журналы остановок оборудования
          <!--<button onclick="alert(document.cookie)">Cookie</button>!-->
      </div>     
-     <a class ="logOut" ng-click="mc.logOut();">Выйти</a>
+     <a class ="logOut" ng-click="mc.logOut();">Logout</a>
      <div id="currentUserDiv" class ="currentUser">
-         Текущий пользователь: {{mc.authInfo.userName? (mc.authInfo.userName==""?"нет":mc.authInfo.userName):'нет'}} |
+         Current user: {{mc.authInfo.userName? (mc.authInfo.userName==""?"none":mc.authInfo.userName):'none'}} |
      </div>
  </div>
  <div class ="appWorkArea">
@@ -54,8 +54,8 @@
          <div ng-view id="viewDiv" class ="viewDiv">
          </div>
          <div id="viewButtonsDiv" class ="viewButtons">             
-             <button class="btn btn-primary" style="display: inline-block; width:100px; line-height:14px" ng-click="mc.saveInView()">Сохранить</button>
-             <button class="btn btn-default" style="display: inline-block; width:100px; margin-left:10px; line-height:14px" ng-click="mc.cancelInView()">Отмена</button>
+             <button class="btn btn-primary" style="display: inline-block; width:100px; line-height:14px" ng-click="mc.saveInView()">Save</button>
+             <button class="btn btn-default" style="display: inline-block; width:100px; margin-left:10px; line-height:14px" ng-click="mc.cancelInView()">Cancel</button>
          </div>
         <!-- стандартные диалоги !-->
         <script type="text/ng-template" id="deleteDialogId">             

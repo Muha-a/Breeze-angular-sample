@@ -64,9 +64,6 @@
     <Compile Include="Employee.cs">
       <DependentUpon>WFMModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EventDocument.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="GPUCause.cs">
       <DependentUpon>WFMModel.tt</DependentUpon>
     </Compile>
@@ -78,9 +75,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagTrigger.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WFMDocument.cs">
       <DependentUpon>WFMModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WFMModel.Context.cs">

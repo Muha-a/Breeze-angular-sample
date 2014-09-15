@@ -7,12 +7,12 @@ using System.Web;
 namespace WFM
 {
     /// <summary>
-    /// Класс для доступа к параметрам конфигурации
+    /// Application configuration access
     /// </summary>
     public class BASampleConfig
     {
         /// <summary>
-        /// Порт на котором доступен jasper-сервер
+        /// jasper-server port
         /// </summary>        
         internal static int GetJasperPort()
         {

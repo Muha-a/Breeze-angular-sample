@@ -27,8 +27,6 @@ namespace WFMModel
     
         public DbSet<TagTrigger> TagTriggerSet { get; set; }
         public DbSet<GPUTypicalCause> GPUTypicalCauseSet { get; set; }
-        public DbSet<WFMDocument> WFMDocumentSet { get; set; }
-        public DbSet<EventDocument> EventDocumentSet { get; set; }
         public DbSet<Employee> EmployeeSet { get; set; }
         public DbSet<GPUCause> GPUCauseSet { get; set; }
         public DbSet<GPUStop> GPUStopSet { get; set; }

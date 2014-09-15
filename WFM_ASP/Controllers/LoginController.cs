@@ -17,7 +17,7 @@ using WFMModel;
 namespace MvcApplication5.Controllers
 {
     /// <summary>
-    /// Контроллер для обработки запросов авторизации
+    /// Authorization requests processing
     /// </summary>
     public class LoginController : ApiController
     {
@@ -31,11 +31,10 @@ namespace MvcApplication5.Controllers
                 //var response = new HttpResponseMessage(HttpStatusCode.OK);
                 var responseContent = "userName=" + parameters.user + ";" + "role=" + UserRoles.GetUserRole(parameters.user);
                 // авторизация
-                // если пользователь есть в AD или база пользователей 
+                // AD authorization disabled or user exists in Active Directory
                 if (BASampleConfig.AD_Off()||Membership.ValidateUser(parameters.user, parameters.password))
-                {   
-                    // FormsAuthentication.SetAuthCookie(objName.user, true);
-                    // время окончания авторизации: в 8 или в 20;
+                {                       
+                    // authorization timeout: at 8:00 or 20:00;
                     DateTime endAuthTime;
                     var now = DateTime.Now;
                     if (now.TimeOfDay >= TimeSpan.FromHours(8) && now.TimeOfDay <= TimeSpan.FromHours(20))
@@ -47,16 +46,14 @@ namespace MvcApplication5.Controllers
                             endAuthTime = now.Date.AddDays(1) + TimeSpan.FromHours(8);                    
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
                       parameters.user,
-                      DateTime.Now,
-                        //DateTime.Now.AddDays(1),
+                      DateTime.Now,                        
                         endAuthTime,
                       true,
                       "content",
                       FormsAuthentication.FormsCookiePath);                    
                     string encTicket = FormsAuthentication.Encrypt(ticket);
                     var userCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);                    
-                    
-                    //userCookie.Expires.AddDays(1);
+                                        
                     userCookie.Expires=DateTime.Now.AddYears(15);
                     HttpContext.Current.Response.Cookies.Set(userCookie);
 

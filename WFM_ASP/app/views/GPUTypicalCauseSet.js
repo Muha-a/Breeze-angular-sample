@@ -32,9 +32,9 @@
                 enableColumnResize: true,
                 rowHeight: 25,
                 selectedItems: [],
-                columnDefs: [{ field: 'Name', displayName: 'Наименование', width: "160px" }, 
-                             { field: 'Comment', displayName: 'Пояснения', width: "300px" },
-                             { field: 'IsFailure', displayName: 'Остановка', cellTemplate: cellTemplate('IsFailure(row.entity)'), width: "120px" }]
+                columnDefs: [{ field: 'Name', displayName: 'Name', width: "160px" }, 
+                             { field: 'Comment', displayName: 'Comment', width: "300px" },
+                             { field: 'IsFailure', displayName: 'Emergency', cellTemplate: cellTemplate('IsFailure(row.entity)'), width: "120px" }]
             };
         }
     }

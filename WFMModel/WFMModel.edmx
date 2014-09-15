@@ -8,8 +8,6 @@
   <EntityContainer Name="WFMModelStoreContainer">
     <EntitySet Name="TagTriggerSet" EntityType="WFMModel.Store.TagTriggerSet" store:Type="Tables" Schema="santa_ef" />
     <EntitySet Name="GPUTypicalCauseSet" EntityType="WFMModel.Store.GPUTypicalCauseSet" store:Type="Tables" Schema="santa_ef" />
-    <EntitySet Name="WFMDocumentSet" EntityType="WFMModel.Store.WFMDocumentSet" store:Type="Tables" Schema="santa_ef" />
-    <EntitySet Name="EventDocumentSet" EntityType="WFMModel.Store.EventDocumentSet" store:Type="Tables" Schema="santa_ef" />
     <EntitySet Name="EmployeeSet" EntityType="WFMModel.Store.EmployeeSet" store:Type="Tables" Schema="santa_ef" />
     <EntitySet Name="GPUCauseSet" EntityType="WFMModel.Store.GPUCauseSet" store:Type="Tables" Schema="santa_ef" />
     <EntitySet Name="GPUStopSet" EntityType="WFMModel.Store.GPUStopSet" store:Type="Tables" Schema="santa_ef" />
@@ -49,20 +47,6 @@
     <Property Name="Name" Type="varchar" Nullable="true" MaxLength="100" />
     <Property Name="Comment" Type="varchar" Nullable="true" MaxLength="100" />
     <Property Name="IsFailure" Type="bool" Nullable="false" DefaultValue="false" />
-  </EntityType>
-  <EntityType Name="WFMDocumentSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="EventDocumentSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EventTime" Type="datetime" Nullable="true" />
-    <Property Name="RevocationTime" Type="datetime" Nullable="true" />
   </EntityType>
   <EntityType Name="EmployeeSet">
     <Key>
@@ -154,8 +138,6 @@
         <EntityContainer Name="WFMModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TagTriggerSet" EntityType="WFMModel.TagTrigger" />
           <EntitySet Name="GPUTypicalCauseSet" EntityType="WFMModel.GPUTypicalCause" />
-          <EntitySet Name="WFMDocumentSet" EntityType="WFMModel.WFMDocument" />
-          <EntitySet Name="EventDocumentSet" EntityType="WFMModel.EventDocument" />
           <EntitySet Name="EmployeeSet" EntityType="WFMModel.Employee" />
           <AssociationSet Name="EmployeeGPUCause" Association="WFMModel.EmployeeGPUCause">
             <End Role="GPUCause" EntitySet="GPUCauseSet" />
@@ -215,20 +197,6 @@
           <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Nullable="true" />
           <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
           <Property Type="Boolean" Name="IsFailure" Nullable="false" DefaultValue="false" />
-        </EntityType>
-        <EntityType Name="WFMDocument">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          </EntityType>
-        <EntityType Name="EventDocument">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="DateTime" Name="EventTime" Nullable="true" />
-          <Property Type="DateTime" Name="RevocationTime" Nullable="true" />
         </EntityType>
         <EntityType Name="GPUStop">
           <Key>
@@ -342,22 +310,6 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="IsFailure" ColumnName="IsFailure" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WFMDocumentSet">
-      <EntityTypeMapping TypeName="IsTypeOf(WFMModel.WFMDocument)">
-        <MappingFragment StoreEntitySet="WFMDocumentSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EventDocumentSet">
-      <EntityTypeMapping TypeName="IsTypeOf(WFMModel.EventDocument)">
-        <MappingFragment StoreEntitySet="EventDocumentSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
-          <ScalarProperty Name="RevocationTime" ColumnName="RevocationTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

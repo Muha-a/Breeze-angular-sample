@@ -1,10 +1,10 @@
 ﻿// регистрируется контроллер
 var EmployeeC = angular.module("app").controller('EmployeeC', 
     function ($scope) {
-        $scope.roles = [{ name: 'администратор', value: 'admin' }, { name: 'оператор', value: 'operator' }, { name: 'руководитель', value: 'manager' }];
+        $scope.roles = [{ name: 'administrator', value: 'admin' }, { name: 'operator', value: 'operator' }, { name: 'manager', value: 'manager' }];
         // поддержка функций для представления
         $scope.getOptions = function () {
-            return { title: "Оператор ГПУ", saveButtons: true };
+            return { title: "GPU operator", saveButtons: true };
         };
         $scope.saveChanges = function () {
             if ($scope.Role)

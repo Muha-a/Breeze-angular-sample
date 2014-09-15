@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace MvcApplication5.Controllers
 {
     /// <summary>
-    /// Контроллер возвращает html представлений
+    /// This controller returns html of views
     /// </summary>
     public class ViewsController : Controller
     {

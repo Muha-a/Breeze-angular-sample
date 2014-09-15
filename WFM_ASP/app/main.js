@@ -1,8 +1,8 @@
 ﻿
-// переменная для хранения текущей автотизации
+// current authorization info
 var authInfo = { userName: null, role: null, };
 
-// прочитать параметры авторизации, прилагаемые к главной странице
+// reads authorization info from atached to main page cookies
 getAuthFromCookie(document.cookie);
 
 function getAuthFromCookie(cookie) {
@@ -18,31 +18,31 @@ function getAuthFromCookie(cookie) {
     }
 }
 
-// Инициализацию angular оборачиваем в функцию, которая сразу запускается чтобы не засорять пространство имен
+// angular initialization wrapped to a function
 (function () {
-    // инициализация ангулар
+    // angular initialization
     angular.module('app', ['breeze.angular', 'ngRoute', 'ngGrid', 'ngDialog', 'ui.bootstrap', ]);
 
-    // инициализируется корневой контроллер, который обслуживает главную страницу
+    // root controller initialization
     angular.module("app").controller('mainC',
         function ($rootScope, $scope, $window, $location, $route, ngDialog, datepickerPopupConfig, breeze) {
             var vm = this;
-            // функция для сохранения (вызывается по кнопке "сохранить")
+            // save data (on Save button)
             vm.saveInView = function () {
-                // сохранение для текущего контекста
+                // get current controller scope for current active view
                 var c = getCurrentScope();
                 if (c)
                     if (c.saveChanges)
                         c.saveChanges().then(function () {
-                            // на предыдущую страницу
+                            // go to previous view
                             $window.history.back();
                         }).catch(function (mess) {
-                            alert('Ошибка при сохранении данных: ' + mess);
+                            alert('Data saving error: ' + mess);
                         });
             };
-            // функция для кнопки Отмена
+            // Cancell button
             vm.cancelInView = function () {
-                // отменяются изменения в текущей открытой модели (возможно, это лишне)
+                // cancell changhigs (may be it is not necessary)
                 var c = getCurrentScope();
                 if (c)
                     if (c.cancellChanges) {
@@ -51,20 +51,20 @@ function getAuthFromCookie(cookie) {
                         $window.history.back();
                     }
             };
-            // обработка события перехода на другую страницу
+            // veiw changing processing
             $rootScope.$on("$locationChangeStart", function (event, newUrl, oldUrl) {                
-                // авторизация: если нет прав на новый маршрут - переход на Login
+                // authorization: go to login page if user does not have access rights to a new route 
                 if (authInfo.userName == null || authInfo.userName == "") {
                     $location.path('/Login')
                     return;
                 }                
                 var c = getCurrentScope();
                 if (c)                
-                    if (c.validate) // контроллер может не разрешить переход
+                    if (c.validate) // controller can disable invalid data saving
                     if (!c.validate())
                         event.preventDefault();
             });
-            // обработка события открытия нового представления
+            // new view loaging event processing
             $rootScope.$on("$viewContentLoaded", function () {
                 var c = getCurrentScope();
                 // настройка элементов основного окна для нового представления
@@ -272,9 +272,9 @@ function buildMenu() {
     // заполнить меню (пока хардкодим)
     if (authInfo.role == 'admin') {
         var ul = $("<ul></ul>");
-        var it1 = $("<li>Администрирование<ul><li view_name='TagTriggerSet'>Обработчики событий</li><li view_name='EmployeeSet'>Операторы ГПУ</li><li view_name='GPUTypicalCauseSet'>Причины ост. ГПУ</li></ul></li>");
-        var it5 = $("<li view_name='GPUStopSet'>Журнал остановок ГПУ</li>");
-        var it6 = $("<li view_name='GPUReport'>Отчет по остановкам ГПУ</li>");
+        var it1 = $("<li>Admin<ul><li view_name='TagTriggerSet'>Events processing</li><li view_name='EmployeeSet'>GPU operators</li><li view_name='GPUTypicalCauseSet'>GPU stop causes</li></ul></li>");
+        var it5 = $("<li view_name='GPUStopSet'>Log of GPU stops</li>");
+        var it6 = $("<li view_name='GPUReport'>GPU stops report</li>");
         ul.append(it1);
         ul.append(it5);
         ul.append(it6);
@@ -282,15 +282,15 @@ function buildMenu() {
     else
         if (authInfo.role == 'operator') {
             var ul = $("<ul></ul>");
-            var it5 = $("<li view_name='GPUStopSet'>Журнал остановок ГПУ</li>");
-            var it6 = $("<li view_name='GPUReport'>Отчет по остановкам ГПУ</li>");
+            var it5 = $("<li view_name='GPUStopSet'>Log of GPU stops</li>");
+            var it6 = $("<li view_name='GPUReport'>GPU stops report</li>");
             ul.append(it5);
             ul.append(it6);
         }
         else
             if (authInfo.role == 'manager') {
                 var ul = $("<ul></ul>");                
-                var it6 = $("<li view_name='GPUReport'>Отчет по остановкам ГПУ</li>");                
+                var it6 = $("<li view_name='GPUReport'>GPU stops report</li>");
                 ul.append(it6);
             }
     $('#mainMenu').jstree("destroy");

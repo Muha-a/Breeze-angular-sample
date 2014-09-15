@@ -1,17 +1,17 @@
 ﻿<div class='innerViewDiv' style="padding-left:30px; overflow-y: scroll" ng-controller="GPUCauseHistC">
     <div ng-repeat="doc in corrDocs">
         <hr style="margin-right:10px">
-        <span class="parameterName w150" style="font-style:italic">Время создания (корректировки) документа:</span>
+        <span class="parameterName w150" style="font-style:italic">Time of creation (or correcting) of the document:</span>
         <span style="font-style:italic">{{doc.CreationTime | date : 'yyyy.MM.dd HH:mm:ss'}}</span> 
         <br>    
-        <span class="parameterName w150">Оператор:</span> {{doc.Employee? doc.Employee.getFIO(): "-"}}
+        <span class="parameterName w150">Operator:</span> {{doc.Employee? doc.Employee.getFIO(): "-"}}
         <br>    
-        <span class="parameterName w150">Описание причины:</span> {{doc.Cause? doc.Cause.Name: "-"}}
+        <span class="parameterName w150">Cause description:</span> {{doc.Cause? doc.Cause.Name: "-"}}
         <br>
-        <span class="parameterName w150">Комментарий:</span> {{doc.Comment}}
+        <span class="parameterName w150">Comment:</span> {{doc.Comment}}
         <br>
-        <span class="parameterName w150">Выполненные работы:</span> {{doc.Work}}
+        <span class="parameterName w150">Performed works:</span> {{doc.Work}}
         <br>
-        <span class="parameterName w150">Время пуска:</span> {{doc.RestartTime | date : 'yyyy.MM.dd HH:mm:ss'}}
+        <span class="parameterName w150">Restart time:</span> {{doc.RestartTime | date : 'yyyy.MM.dd HH:mm:ss'}}
     </div>
 </div>
