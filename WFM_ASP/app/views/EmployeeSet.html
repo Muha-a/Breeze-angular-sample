@@ -1,0 +1,8 @@
+﻿<div class="innerViewDiv" ng-controller="EmployeeSetC">
+     <div class="gridNavigator">
+         <button class="btn btn-default" ng-click="mc.openViewForRow('Employee',gridOptions)" ng-disabled="!(gridOptions.selectedItems.length>0)">Редактировать</button>
+         <button class="btn btn-default" ng-click="mc.openViewForNew('Employee')">Создать</button>
+         <button class="btn btn-default" ng-click="mc.deleteEntity(gridOptions,employees)" ng-disabled="!(gridOptions.selectedItems.length>0)">Удалить</button>
+    </div>    
+     <div class="gridStyle" ng-grid="gridOptions"></div>
+</div>  

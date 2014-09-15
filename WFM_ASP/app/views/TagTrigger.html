@@ -1,0 +1,15 @@
+﻿<div class='innerViewDiv' style="padding-left:30px" ng-controller="TagTriggerC">
+    <br>
+    Наименование триггера или объекта: <br>    
+    <input data-ng-model="trigger.ObjName" style="width: 400px" type="text"/>   
+    <br>
+    Логическое выражение для условия срабатывания: <br>
+    <textarea data-ng-model="trigger.CondExpression" style="width: 400px"  rows="5"></textarea>
+    <br>
+    Период приостановки после срабатывания, сек.:<br>    
+    <input data-ng-model="trigger.Pause" style="width: 400px" type="text"/>
+    <br>
+    Содержимое полей документа:<br>    
+    <textarea data-ng-model="trigger.DocContent" style="width: 400px"  rows="5"></textarea>
+    <br>
+</div>

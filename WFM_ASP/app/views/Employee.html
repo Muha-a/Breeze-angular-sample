@@ -1,0 +1,20 @@
+﻿<div class='innerViewDiv' style="padding-left:30px" ng-controller="EmployeeC">
+    <br>
+    Имя пользователя<br>
+    <input data-ng-model="employee.UserName" style="width: 400px" type="text"/>    
+    <br><br>
+    Роль:
+    <br>
+    <select style="width: 400px" ng-model="Role" ng-options="r.name for r in roles">
+      <option value="">нет</option>
+    </select>
+    <br>    <br>
+    Фамилия: <br>    
+    <input data-ng-model="employee.Surname" style="width: 400px" type="text"/>   
+    <br><br>
+    Имя: <br>
+    <input data-ng-model="employee.Name" style="width: 400px" type="text"/>   
+    <br><br>    
+    Отчество:<br>
+    <input data-ng-model="employee.Patronymic" style="width: 400px" type="text"/>           
+</div>

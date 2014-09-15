@@ -1,0 +1,12 @@
+﻿<div class='innerViewDiv' id = "GPUTypicalCause_main" style="padding-left:30px" ng-controller="GPUTypicalCauseC">
+    <br>
+    Наименование: <br>    
+    <input data-ng-model="cause.Name" style="width: 400px" type="text"/>
+    <br><br>
+    Остановка: <br>    
+    <input type="radio" data-ng-model="cause.IsFailure" style="vertical-align: middle; margin: 0px; margin-right:5px" ng-value="true" name="fail"><span style="vertical-align: middle">Аварийная остановка</span><br>    
+    <input type="radio" data-ng-model="cause.IsFailure" style="vertical-align: middle; margin: 0px; margin-right:5px" ng-value="false" name="fail"><span style="vertical-align: middle">Остановка оператором</span><br>
+    <br>
+    Пояснения: <br>
+    <textarea data-ng-model="cause.Comment" style="width: 400px"  rows="5"></textarea>        
+</div>

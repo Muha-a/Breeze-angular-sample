@@ -1,0 +1,8 @@
+﻿<div class="innerViewDiv" ng-controller="GPUTypicalCauseSetC">
+     <div class="gridNavigator">
+         <button class="btn btn-default" ng-click="mc.openViewForRow('GPUTypicalCause',gridOptions)" ng-disabled="!(gridOptions.selectedItems.length>0)">Редактировать</button>
+         <button class="btn btn-default" ng-click="mc.openViewForNew('GPUTypicalCause')">Создать</button>
+         <button class="btn btn-default" ng-click="mc.deleteEntity(gridOptions,causes)" ng-disabled="!(gridOptions.selectedItems.length>0)">Удалить</button>
+    </div>
+     <div class="gridStyle" ng-grid="gridOptions"></div>
+</div>  

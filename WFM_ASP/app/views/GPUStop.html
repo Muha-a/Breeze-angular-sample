@@ -1,0 +1,50 @@
+﻿<div class='innerViewDiv boxSizing' style="padding-left:30px; overflow-y: scroll" ng-controller="GPUStopC">
+    <hr style="margin-right:10px">
+    <p class="sectionTitle">Запись об остановке ГПУ</p>    
+    <span class="parameterName w200">ГПУ:</span><span >{{stop.ObjName}}</span>
+    <br>
+    <span class="parameterName w200">Время остановки:</span><span>{{stop.EventTime | date : 'yyyy.MM.dd HH:mm:ss'}}</span>
+    <br>
+    <span class="parameterName w200">Время пуска по ТС:</span><span>{{stop.RevocationTime | date : 'yyyy.MM.dd HH:mm:ss'}}</span>        
+    <br>
+    <hr style="margin-right:10px">
+    <p class ="sectionTitle">Причина остановки ГПУ</p>    
+    <br>
+    <span class="parameterName w200">Оператор:</span><span>{{stop.CauseDoc.Employee.Surname+' '+stop.CauseDoc.Employee.Name.substr(0,1)+'.'+stop.CauseDoc.Employee.Patronymic.substr(0,1)+'.'}}</span>
+    <br><br>
+    Описание причины:
+    <br>
+    <select style="width: 400px" ng-disabled="readonly" ng-model="stop.CauseDoc.Cause" ng-options="cs.Name for cs in causes">
+      <option value="">не указана</option>
+    </select>
+    <br><br>
+    Комментарий:<br>
+    <textarea ng-disabled="readonly" data-ng-model="stop.CauseDoc.Comment" style="width: 400px"  rows="2"></textarea>
+    <br><br>
+    Выполненные работы:<br>
+    <textarea ng-disabled="readonly" data-ng-model="stop.CauseDoc.Work" style="width: 400px"  rows="2"></textarea>
+    <br><br>
+    Дата и время пуска:<br>
+    <div class="col-md-6" ng-disabled="readonly">
+        <p class="input-group">
+          <input ng-disabled="readonly" type="text" class="form-control" datepicker-popup="{{'dd.MM.yyyy'}}" ng-model="stop.CauseDoc.RestartTime" is-open="openedTime"/>
+          <span class="input-group-btn">
+            <button ng-disabled="readonly" type="button" class="btn btn-default" ng-click="openTime($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>        
+
+    <timepicker class="timePicker" ng-disabled="readonly" ng-model="stop.CauseDoc.RestartTime" hour-step="1" minute-step="1" show-meridian="false"></timepicker>    
+
+    <br><br>
+    <div class="btn-group" dropdown is-open="corrIsOpen">
+      <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="!readonly">
+        Корректировка <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="" ng-click="corrIsOpen=false; correctDoc()">Скорректировать документ</a></li>
+        <li><a href="" ng-click="corrIsOpen=false; mc.openViewForObject('GPUCauseHist',stop.CauseDoc.Id)">История корректировок</a></li>
+      </ul>
+    </div>    
+
+</div>

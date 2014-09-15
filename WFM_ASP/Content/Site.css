@@ -1,0 +1,297 @@
+﻿
+/* перекрываем установленный бутстрапом, чтобы не кособочились элементы */
+* {
+    box-sizing: content-box;
+}
+
+.btn {
+    box-sizing: border-box;
+}
+
+.boxSizing * {
+    box-sizing: border-box;
+}
+
+
+.appBanner {
+    position: fixed;
+    top: 0px;
+    height: 26px;
+    border-top: 1px solid #0facef;
+    border-bottom: 1px solid #174A6A;
+    vertical-align: baseline;
+    background: url("/WFM/content/images/bannerBack.png") repeat-x scroll 0 0 #2881BB;
+    left: 0px;
+    right: 0px;
+}
+
+.appWorkArea {
+    position: absolute;
+    top: 28px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;    
+    background: #0A95D1;
+    font-size: 13px;
+    /*line-height: 1.182em;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.treeArea {
+    position: absolute;
+    display: block;
+    width: 230px;    
+    margin: 4px;
+    border: 1px solid #666666;    
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+}
+
+.viewsArea {
+    position: absolute;    
+    left: 230px;
+    min-width: 500px;
+    right: 0;
+    margin: 4px;
+    border: 1px solid #666666;    
+    margin-left: 10px;        
+    bottom: 0px;
+    top: 0px;
+    background: #fff;
+}
+
+.areaHeader {
+    position: absolute;
+    height: 28px;
+    top:0px;
+    left:0px;
+    right:0px;
+    background: url(/WFM/content/images/treeHeader.png) repeat-x #fff;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.treeDiv {
+    top: 29px;
+    background-color: #f8f8f8;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: normal;
+    right: 0;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.viewDiv {
+    position: absolute;    
+    left: 0px;
+    right: 0;
+    bottom: 37px;
+    top: 30px;
+    background: #fff;
+}
+
+.viewDiv {
+    position: absolute;    
+    left: 0px;
+    right: 0;
+    bottom: 37px;
+    top: 30px;
+    background: #fff;
+}
+
+
+.innerViewDiv {
+    position: absolute;
+    left: 0px;
+    right: 0;
+    bottom: 0px;
+    top: 0px;
+    background-color: transparent;
+}
+
+.viewButtons {
+    position: absolute;    
+    border-top: 1px solid #D4D5D5;
+    height: 37px;
+    bottom: 0px;
+    left: 0px;
+    right:0px;
+    padding-left:20px;
+    line-height: 37px;
+}
+
+
+.programmTitle {            
+    margin: 4px 4px 0px 16px;    
+    float: left;
+    color: #f8f8f8;        
+    font-size: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.currentUser {            
+    margin: 4px 4px 0px 16px;    
+    float: right;
+    color: #f8f8f8;        
+    font-size: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.logOut {            
+    margin: 4px 20px 0px 16px;    
+    float: right;
+    color: #f8f8f8;        
+    font-size: 13px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+.title {
+    color: #0872A4;
+    line-height: 28px;
+    height: 28px;
+    border-top: 1px solid #c5c5c5;
+    padding-left: 12px;
+    font-weight: bold;
+}
+
+
+.gridNavigator {    
+    position: absolute;
+    border-bottom: 1px solid #c5c5c5;
+    height: 28px; 
+    background-color: #dededc;
+    left: 0px;
+    right: 0px;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+.gridNavigator button {    
+    line-height: 10px;
+}
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    position: absolute;
+    top: 29px;     
+    bottom: 0px; left: 0px; right: 0px;
+    line-height:15px;
+}
+
+.ngRow.odd {     
+    background-color: #FFFFFF;
+    border: 1px solid rgb(185,185,185);
+    /*border-bottom: 1px solid rgb(185,185,185);*/
+}
+
+.ngRow.even {     
+    background-color: #FFFFFF;
+    border: 1px solid rgb(185,185,185);   
+    /*border-top: 1px solid rgb(185,185,185);*/
+}
+
+
+.ngRow.selected {
+  background-color: #c9dde1
+}
+
+.ngHeaderCell {
+  background-color: RGB(218,227,238);
+  border: 1px solid rgb(200,200,200);   
+}
+
+.ngHeaderContainer {    
+  background-color: RGB(218,227,238);
+  border: 0px solid rgb(200,200,200);   
+}
+
+.sectionTitle {
+    font-size: 12px;
+    color: #217EB5;
+    font-weight: bold;
+
+}
+
+.parameterName {
+    display: inline-block; 
+    width: 200px
+}
+
+.parameterName.w50 {
+    display: inline-block;
+    width: 50px;
+}
+
+.parameterName.w100 {
+    display: inline-block;
+    width: 100px;
+}
+
+
+.parameterName.w200 {
+    display: inline-block; 
+    width: 200px
+}
+
+.parameterName.w300 {
+    display: inline-block; 
+    width: 300px
+}
+
+.processedDoc {
+    background-color: #d6ffd6;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    left:0px;
+    right: 1px;
+}
+
+.newDoc {
+    background-color: #ffd7d7;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    left:0px;
+    right: 1px;
+}
+
+.col-md-6 {
+    vertical-align: middle; 
+    margin: 0px; 
+    display:inline-block; 
+    position:static; 
+    width:200px; 
+    float:none;
+    padding-left: 0px
+       
+}
+
+.col-md-6 input {
+        height: 28px;        
+}
+
+.timePicker {
+    /*vertical-align: middle; */
+    margin: 0px; 
+    display:inline-block; 
+    position:static;     
+    float:none;
+    padding-left: 0px;   
+    position: relative;
+    top:-22px;
+     
+}
+
+.timePicker input {
+        /*line-height:10px;*/
+        height: 28px;
+}

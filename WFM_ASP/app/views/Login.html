@@ -1,0 +1,12 @@
+﻿<div class='innerViewDiv' style="padding-left:30px" ng-controller="LoginC">
+    <br>
+    Имя пользователя: <br>    
+    <input ng-disabled="sucess" data-ng-model="userName" style="width: 200px" type="text" ng-keydown="$event.keyCode == 13 ? focusNext() : null"/>   
+    <br>
+    Пароль: <br>
+    <input id='passInput' type="password" ng-disabled="sucess" data-ng-model="password" ng-keydown="$event.keyCode == 13 ? login() : null"  style="width: 200px" type="text"/>   <br><br>
+    <button ng-disabled="sucess" class="btn btn-primary" ng-Click="login()">Войти</button>
+    <br><br><br>
+    <span style="color:#23d11c; font-size: 18px" ng-hide="!sucess">Авторизация выполнена успешно</span>
+    <span style="color:#ff0000; font-size: 18px" ng-hide="!error">Неверный пароль или имя пользователя</span>
+</div>

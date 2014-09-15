@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Отказы оборудования";
+}
+<body>
+ <script src="/WFM/Scripts/jquery-2.1.1.js"></script>
+ <script src="/WFM/Scripts/q.js"></script>    
+ <script src="/WFM/Scripts/breeze.debug.js"></script>
+ <script src="/WFM/Scripts/angular.js"></script>
+ <script src="/WFM/Scripts/angular-route.js"></script>
+ <script src="/WFM/Scripts/breeze.angular.js"></script> 
+ <script src="/WFM/Scripts/jsTree3/jstree.js"></script>
+ <script src="/WFM/Scripts/ng-grid.js"></script> 
+ <script src="/WFM/Scripts/moment.js"></script> 
+    
+ <!--<script src="/Scripts/ngQuickDate/ng-quick-date.js"></script>!-->
+ <script src="/WFM/Scripts/ng-Dialog/ngDialog.js"></script>    
+ <script src="/WFM/Scripts/uiBootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+ <script src="/WFM/Scripts/i18n/angular-locale_ru-ru.js"></script>    
+ 
+<link href="/WFM/Content/bootstrap.css" rel="stylesheet"/>         
+ <link href="/WFM/content/ng-grid.css" rel="stylesheet"/>         
+ <link rel="stylesheet" href="/WFM/Scripts/ngQuickDate/ng-quick-date-plus-default-theme.css"/>    
+ <link href="/WFM/Scripts/ng-Dialog/ngDialog.css" rel="stylesheet"/>         
+ <link href="/WFM/Scripts/ng-Dialog/ngDialog-theme-plain.css" rel="stylesheet"/>          
+ <link rel="stylesheet" href="/WFM/Scripts/jsTree3/themes/default/style.min.css"/>     
+ <link href="/WFM/content/site.css" rel="stylesheet"> 
+ 
+<div ng-app="app" ng-controller="mainC as mc">
+ <div class ="appBanner">     
+     <div class ="programmTitle">
+         Журналы остановок оборудования
+         <!--<button onclick="alert(document.cookie)">Cookie</button>!-->
+     </div>     
+     <a class ="logOut" ng-click="mc.logOut();">Выйти</a>
+     <div id="currentUserDiv" class ="currentUser">
+         Текущий пользователь: {{mc.authInfo.userName? (mc.authInfo.userName==""?"нет":mc.authInfo.userName):'нет'}} |
+     </div>
+ </div>
+ <div class ="appWorkArea">
+     <div class ="treeArea">
+         <div class ="areaHeader">
+             <div class="title">
+                Меню
+			</div>
+         </div>
+         <div id="mainMenu" class="treeDiv">
+	     </div>
+     </div>
+     <div id="viewsArea" class ="viewsArea">
+         <div class ="areaHeader">
+             <div id="currentViewTitle" class="title">                                 
+			</div>
+         </div>
+         <div ng-view id="viewDiv" class ="viewDiv">
+         </div>
+         <div id="viewButtonsDiv" class ="viewButtons">             
+             <button class="btn btn-primary" style="display: inline-block; width:100px; line-height:14px" ng-click="mc.saveInView()">Сохранить</button>
+             <button class="btn btn-default" style="display: inline-block; width:100px; margin-left:10px; line-height:14px" ng-click="mc.cancelInView()">Отмена</button>
+         </div>
+        <!-- стандартные диалоги !-->
+        <script type="text/ng-template" id="deleteDialogId">             
+            <div class="ngdialog-message">
+                <span >Удалить объект?</span>
+            </div>
+            <div class="ngdialog-buttons">
+                <button class="ngdialog-button btn btn-default" ng-click="closeThisDialog('cancel')">Отмена</button>            
+                <button class="ngdialog-button btn btn-primary" ng-click="closeThisDialog('yes')">Да</button>                            
+            </div>
+        </script>
+
+     </div>
+ </div>
+</div>
+ <script src="/WFM/app/main.js"></script>
+ <script src="/WFM/app/entity_ext.js"></script>
+ <script src="/WFM/app/views/GPUTypicalCause.js"></script>
+ <script src="/WFM/app/views/GPUTypicalCauseSet.js"></script>
+ <script src="/WFM/app/views/TagTriggerSet.js"></script>
+ <script src="/WFM/app/views/TagTrigger.js"></script>
+ <script src="/WFM/app/views/EmployeeSet.js"></script>
+ <script src="/WFM/app/views/Employee.js"></script>
+ <script src="/WFM/app/views/GPUStopSet.js"></script>
+ <script src="/WFM/app/views/GPUStop.js"></script>
+ <script src="/WFM/app/views/GPUReport.js"></script>
+ <script src="/WFM/app/views/GPUCauseHist.js"></script>
+ <script src="/WFM/app/views/None.js"></script>
+ <script src="/WFM/app/views/Login.js"></script>
+
+</body>

@@ -1,0 +1,8 @@
+﻿<div class='innerViewDiv' style="padding-left:30px" ng-controller="TagTriggerSetC">
+     <div class="gridNavigator">
+         <button class="btn btn-default" ng-click="mc.openViewForRow('TagTrigger',gridOptions)" ng-disabled="!(gridOptions.selectedItems.length>0)">Редактировать</button>
+         <button class="btn btn-default" ng-click="mc.openViewForNew('TagTrigger')">Создать</button>
+         <button class="btn btn-default" ng-click="mc.deleteEntity(gridOptions,triggers)" ng-disabled="!(gridOptions.selectedItems.length>0)">Удалить</button>
+    </div>
+    <div class="gridStyle" ng-grid="gridOptions"></div>    
+</div>
