@@ -9,7 +9,7 @@ namespace WFM
     /// <summary>
     /// Класс для доступа к параметрам конфигурации
     /// </summary>
-    public class BATemplateConfig
+    public class BASampleConfig
     {
         /// <summary>
         /// Порт на котором доступен jasper-сервер
@@ -21,6 +21,12 @@ namespace WFM
             if (port != null)
                 int.TryParse(port, out portNum);
             return portNum;
+        }
+
+        internal static bool AD_Off()
+        {
+            string adOff = ConfigurationManager.AppSettings["ADAuth"];
+            return adOff == "Off";
         }
     }
 }

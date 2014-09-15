@@ -31,7 +31,8 @@ namespace MvcApplication5.Controllers
                 //var response = new HttpResponseMessage(HttpStatusCode.OK);
                 var responseContent = "userName=" + parameters.user + ";" + "role=" + UserRoles.GetUserRole(parameters.user);
                 // авторизация
-                if (Membership.ValidateUser(parameters.user, parameters.password))
+                // если пользователь есть в AD или база пользователей 
+                if (BASampleConfig.AD_Off()||Membership.ValidateUser(parameters.user, parameters.password))
                 {   
                     // FormsAuthentication.SetAuthCookie(objName.user, true);
                     // время окончания авторизации: в 8 или в 20;
@@ -63,8 +64,7 @@ namespace MvcApplication5.Controllers
                     return response;
                 }
                 else
-                {
-                    
+                {                    
                     response.Content = new StringContent("fail");
                     return response;
                 }                

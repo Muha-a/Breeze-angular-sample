@@ -48,7 +48,7 @@ namespace MvcApplication5.Controllers
                 par.Add(new JsReportParameter() { name = "timeStart", value = parameters.StartTime });
                 par.Add(new JsReportParameter() { name = "timeEnd", value = parameters.EndTime });
             }
-            Stream rep = JasperHttpHelper.GetReportAsPdf("santaReport", par.ToArray(), BATemplateConfig.GetJasperPort());
+            Stream rep = JasperHttpHelper.GetReportAsPdf("santaReport", par.ToArray(), BASampleConfig.GetJasperPort());
             // вернуть отчет
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StreamContent(rep);
