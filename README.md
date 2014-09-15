@@ -37,4 +37,4 @@ INSERT INTO `santa_ef`.`employeeset` (`Surname`, `Name`, `UserName`, `Role`) VAL
 To enable AD authorization set parameter "ADAuth" to "On" in web.config file.
 
 
-The report an application tries to retrieve from the Jasper-server.
+The application tries to retrieve a report from the Jasper-server.
