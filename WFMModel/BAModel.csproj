@@ -61,68 +61,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
+    <Compile Include="CodeFirst\MySqlHistoryContext.cs" />
+    <Compile Include="CodeFirst\GPUStop.cs" />
+    <Compile Include="CodeFirst\GPUTypicalCause.cs" />
+    <Compile Include="CodeFirst\TagTrigger.cs" />
+    <Compile Include="CodeFirst\WFMModel.cs" />
+    <Compile Include="CodeFirst\Employee.cs" />
+    <Compile Include="CodeFirst\GPUCause.cs" />
+    <Compile Include="Migrations\201409181609351_Initial.cs" />
+    <Compile Include="Migrations\201409181609351_Initial.Designer.cs">
+      <DependentUpon>201409181609351_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="GPUCause.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
+    <Compile Include="Migrations\201409181621490_Initial1.cs" />
+    <Compile Include="Migrations\201409181621490_Initial1.Designer.cs">
+      <DependentUpon>201409181621490_Initial1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GPUStop.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
+    <Compile Include="Migrations\201409181622379_Initial11.cs" />
+    <Compile Include="Migrations\201409181622379_Initial11.Designer.cs">
+      <DependentUpon>201409181622379_Initial11.cs</DependentUpon>
     </Compile>
-    <Compile Include="GPUTypicalCause.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
+    <Compile Include="Migrations\201409181627151_m1.cs" />
+    <Compile Include="Migrations\201409181627151_m1.Designer.cs">
+      <DependentUpon>201409181627151_m1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409181628389_m2.cs" />
+    <Compile Include="Migrations\201409181628389_m2.Designer.cs">
+      <DependentUpon>201409181628389_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409181629549_m3.cs" />
+    <Compile Include="Migrations\201409181629549_m3.Designer.cs">
+      <DependentUpon>201409181629549_m3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409181638149_m4.cs" />
+    <Compile Include="Migrations\201409181638149_m4.Designer.cs">
+      <DependentUpon>201409181638149_m4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagTrigger.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WFMModel.Context.cs">
-      <DependentUpon>WFMModel.Context.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="WFMModel.cs">
-      <DependentUpon>WFMModel.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="WFMModel.Designer.cs">
-      <DependentUpon>WFMModel.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="WFMModel.tt">
-      <DependentUpon>WFMModel.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>WFMModel.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WFMModel.Context.tt">
-      <DependentUpon>WFMModel.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>WFMModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="WFMModel.edmx.diagram">
-      <DependentUpon>WFMModel.edmx</DependentUpon>
-    </None>
-    <None Include="WFMModel.edmx.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="WFMModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WFMModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <EmbeddedResource Include="Migrations\201409181609351_Initial.resx">
+      <DependentUpon>201409181609351_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181621490_Initial1.resx">
+      <DependentUpon>201409181621490_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181622379_Initial11.resx">
+      <DependentUpon>201409181622379_Initial11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181627151_m1.resx">
+      <DependentUpon>201409181627151_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181628389_m2.resx">
+      <DependentUpon>201409181628389_m2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181629549_m3.resx">
+      <DependentUpon>201409181629549_m3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409181638149_m4.resx">
+      <DependentUpon>201409181638149_m4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
