@@ -27,6 +27,10 @@ namespace WFMModel.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.EmployeeSet.AddOrUpdate(p=>p.UserName,
+              new Employee { UserName="admin", Role= "admin"}
+            );
+
         }
     }
 }
