@@ -2,7 +2,7 @@ Breeze-angular-sample
 =====================
 
 A sample enterprise web application using ASP.net, EF, BreezeJS, AngularJS.
-It's my first experience but it works.
+It's my first experience with this frameworks but it works. 
 
 Backend:
 
@@ -22,11 +22,7 @@ Frontend:
 
 VS 2012.
 
-UI and comments language: russian.
-
-
-Default MySQL schema: "santa_ef".
-
+MySQL schema name (in web.config): "santa_ef".
 
 The application uses AD authorization.
 
@@ -37,4 +33,4 @@ INSERT INTO `santa_ef`.`employeeset` (`Surname`, `Name`, `UserName`, `Role`) VAL
 To enable AD authorization set parameter "ADAuth" to "On" in web.config file.
 
 
-The application tries to retrieve a report from the Jasper-server.
+In report view application  tries to retrieve the repoet from the Jasper-server.
