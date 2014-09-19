@@ -7,7 +7,7 @@ It's my first experience with this frameworks but it works.
 Backend:
 
 - MySQL;
-- EF model-first;
+- EF code-first;
 - Breeze context provider EF6;
 
 
@@ -22,15 +22,9 @@ Frontend:
 
 VS 2012.
 
-MySQL schema name (in web.config): "santa_ef".
+MySQL schema name (in web.config): "santa_cf".
 
-The application uses AD authorization.
+The application uses AD authorization. To enable AD authorization set parameter "ADAuth" to "On" in web.config file.
+Default user name: admin.
 
-To start application insert user into MySQL table EmployeeSet: 
-
-INSERT INTO `santa_ef`.`employeeset` (`Surname`, `Name`, `UserName`, `Role`) VALUES ('', '', 'admin', 'admin');
-
-To enable AD authorization set parameter "ADAuth" to "On" in web.config file.
-
-
-In report view application  tries to retrieve the repoet from the Jasper-server.
+In report view application tries to retrieve a report from the Jasper-server.
