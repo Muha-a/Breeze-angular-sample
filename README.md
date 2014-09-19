@@ -22,7 +22,7 @@ Frontend:
 
 VS 2012.
 
-MySQL schema name (in web.config): "santa_ef".
+MySQL schema name (in web.config): "santa_cf".
 
 The application uses AD authorization. To enable AD authorization set parameter "ADAuth" to "On" in web.config file.
 Default user name: admin.
