@@ -23,6 +23,7 @@ namespace ModelTest
             WFMModelContainer m = new WFMModelContainer();
             m.GPUCauseSet.Add(new GPUCause());
             m.SaveChanges();
+            var emp = m.EmployeeSet.FirstOrDefault(em => em.UserName == "admin");
         }
     }
 }

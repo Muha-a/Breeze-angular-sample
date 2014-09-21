@@ -7,7 +7,7 @@ namespace WFMModel
 {
     public partial class GPUCause
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Comment { get; set; }
         public DateTime? RestartTime { get; set; }
         public string Work { get; set; }
@@ -16,8 +16,8 @@ namespace WFMModel
         public virtual GPUTypicalCause Cause { get; set; }
         public virtual GPUCause Replaces { get; set; }
 
-        public int? EmployeeID { get; set; }
-        public int? CauseID { get; set; }
-        public int? ReplacesID { get; set; }                
+        public int? EmployeeId { get; set; }
+        public int? CauseId { get; set; }
+        public int? ReplacesId { get; set; }                
     }
 }

@@ -68,10 +68,6 @@
     <Compile Include="CodeFirst\WFMModel.cs" />
     <Compile Include="CodeFirst\Employee.cs" />
     <Compile Include="CodeFirst\GPUCause.cs" />
-    <Compile Include="Migrations\201409181609351_Initial.cs" />
-    <Compile Include="Migrations\201409181609351_Initial.Designer.cs">
-      <DependentUpon>201409181609351_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,11 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409181609351_Initial.resx">
-      <DependentUpon>201409181609351_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

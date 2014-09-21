@@ -7,12 +7,11 @@ namespace WFMModel
 {
     public partial class Employee
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
         public string UserName { get; set; }
-        public string Role { get; set; }
-        public string Test2 { get; set; }        
+        public string Role { get; set; }        
     }
 }

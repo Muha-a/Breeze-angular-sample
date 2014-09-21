@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAModel", "WFMModel\BAModel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BASample", "WFM_ASP\BASample.csproj", "{86B3D356-4120-47F5-83B0-2AD03935FE3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelTest", "ModelTest\ModelTest.csproj", "{0644A475-9F19-43CB-B7AA-A5715F589136}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,10 +19,6 @@ Global
 		{86B3D356-4120-47F5-83B0-2AD03935FE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86B3D356-4120-47F5-83B0-2AD03935FE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86B3D356-4120-47F5-83B0-2AD03935FE3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0644A475-9F19-43CB-B7AA-A5715F589136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0644A475-9F19-43CB-B7AA-A5715F589136}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0644A475-9F19-43CB-B7AA-A5715F589136}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0644A475-9F19-43CB-B7AA-A5715F589136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
